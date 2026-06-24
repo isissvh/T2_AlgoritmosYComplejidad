@@ -1,0 +1,37 @@
+\section{Implementaciones}
+
+En esta sección se describen los algoritmos implementados para resolver el problema de optimización de satisfacción en el visionado de animes bajo restricciones de tiempo y energía.
+
+\subsection{Algoritmo de Fuerza Bruta}
+Se implementó una búsqueda exhaustiva mediante \textbf{Backtracking}. El algoritmo explora recursivamente todas las combinaciones posibles de prefijos para cada anime. 
+\begin{itemize}
+    \item \textbf{Lógica:} Para cada anime $i$, se prueba con no ver ningún capítulo o ver un prefijo de longitud $k \in \{1, \dots, q_i\}$. Si los recursos (tiempo $M$ y energía $E$) no se agotan, se procede al siguiente anime.
+    \item \textbf{Complejidad Temporal:} $O(\prod_{i=1}^n (q_i + 1))$. Debido a su crecimiento exponencial, este algoritmo solo es viable para instancias muy pequeñas ($n < 15$).
+    \item \textbf{Complejidad Espacial:} $O(n)$, correspondiente a la profundidad máxima del árbol de recursión.
+\end{itemize}
+
+\subsection{Programación Dinámica}
+Se modeló el problema como una variante del \textbf{Problema de la Mochila Multidimensional y de Múltiple Opción} (MMKP).
+\begin{itemize}
+    \item \textbf{Estado:} $DP[m][e]$ representa la máxima satisfacción obtenible con exactamente $m$ minutos y $e$ unidades de energía.
+    \item \textbf{Transición:} Para cada anime, se actualiza el estado considerando cada prefijo posible de manera excluyente (solo se puede elegir un prefijo por anime). Para evitar usar el mismo anime varias veces en una misma iteración, se utiliza una copia temporal del estado previo.
+    \item \textbf{Complejidad Temporal:} $O(n \cdot M \cdot E \cdot \max(q_i))$. Con $n=200, M=3000, E=500, q_i=30$, el total de operaciones es manejable en tiempos modernos ($\approx 9 \times 10^9$ operaciones teóricas, pero mucho menos en la práctica por las restricciones de recursos).
+    \item \textbf{Complejidad Espacial:} $O(M \cdot E)$ mediante la técnica de optimización de espacio.
+\end{itemize}
+
+\subsection{Heurísticas Greedy}
+Se implementaron dos enfoques voraces con criterios locales distintos:
+
+\subsubsection{Greedy 1: Siguiente Capítulo}
+Este algoritmo avanza "capítulo a capítulo". En cada paso, evalúa el siguiente capítulo disponible de todos los animes.
+\begin{itemize}
+    \item \textbf{Criterio:} Maximizar el ratio $v_{i,j} / (t_{i,j} + c_{i,j})$. Si el capítulo completa el anime, se suma el bono $b_i$ a la satisfacción antes de calcular el ratio.
+    \item \textbf{Complejidad:} $O(Q \cdot n)$, donde $Q$ es la cantidad total de capítulos.
+\end{itemize}
+
+\subsubsection{Greedy 2: Mejor Prefijo Global}
+A diferencia del anterior, este evalúa todos los prefijos posibles de los animes restantes en cada paso.
+\begin{itemize}
+    \item \textbf{Criterio:} Seleccionar el prefijo de capítulos $(1 \dots k)$ que maximice el ratio de satisfacción acumulada sobre el costo total acumulado: $(\sum v + b) / (\sum t + \sum c)$.
+    \item \textbf{Complejidad:} $O(n^2 \cdot \max(q_i))$.
+\end{itemize}

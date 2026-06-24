@@ -1,0 +1,4 @@
+algoritmo,n,M,E,satisfaccion,tiempo_ms,memoria_kb
+DynamicProgramming,40,800,200,1858877,14.3952,6016
+Greedy1,40,800,200,1485830,0.0028,6016
+Greedy2,40,800,200,1520823,0.0057,6016

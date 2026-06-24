@@ -1,0 +1,12 @@
+\section{Conclusiones}
+
+Tras el análisis experimental de los cuatro algoritmos propuestos para el problema AniMaraton, se concluye lo siguiente:
+
+\begin{enumerate}
+    \item \textbf{Optimalidad vs Eficiencia:} El algoritmo de Fuerza Bruta es impráctico para cualquier instancia real, confirmando la necesidad de enfoques más sofisticados. La Programación Dinámica logra la solución óptima en un tiempo razonable ($ \approx 1.3$ segundos para $n=200$), lo que la convierte en la opción preferida si la exactitud es crítica.
+    \item \textbf{Desempeño de Heurísticas:} Las heurísticas Greedy, aunque no garantizan el óptimo, demostraron ser extremadamente rápidas. \textbf{Greedy 2} se destaca por capturar mejor la estructura del problema al evaluar prefijos, logrando una calidad de solución superior a Greedy 1 en la mayoría de los casos.
+    \item \textbf{Impacto de los Bonos:} El bono de completación es un factor determinante. Los algoritmos que "miran hacia adelante" (DP y Greedy 2) logran aprovechar mejor estos bonos en comparación con enfoques más miopes (Greedy 1).
+    \item \textbf{Uso de Recursos:} El uso de memoria está dominado por la tabla DP. En sistemas con memoria muy restringida, una heurística Greedy sería la única alternativa viable.
+\end{enumerate}
+
+En conclusión, para el problema AniMaraton, la Programación Dinámica es altamente efectiva dadas las restricciones actuales, mientras que Greedy 2 ofrece un excelente balance para casos donde el tiempo de respuesta deba ser milimétrico.
