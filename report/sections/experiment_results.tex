@@ -1,39 +1,47 @@
-\section{Resultados Experimentales}
-
 A continuación se presentan los resultados obtenidos tras ejecutar la suite de pruebas.
 
 \subsection{Tiempo de Ejecución}
-La Figura \ref{fig:tiempo} muestra el tiempo de ejecución en escala logarítmica respecto al número de animes $n$.
+La Figura \ref{fig:tiempo} muestra el tiempo de ejecución en escala logarítmica respecto al número de animes $n$. Este gráfico global muestra la escalabilidad de los algoritmos en una amplia gama de tamaños de entrada.
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/tiempo_vs_n.png}
+    \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/tiempo_vs_n.png}
     \caption{Tiempo de ejecución promedio por algoritmo.}
     \label{fig:tiempo}
 \end{figure}
 
-Se observa que la Programación Dinámica crece de manera lineal respecto a $n$, lo cual es consistente con su complejidad teórica $O(n \cdot M \cdot E \cdot q)$. Las heurísticas Greedy son órdenes de magnitud más rápidas, manteniendo tiempos casi instantáneos incluso para $n=200$.
+Dado que el algoritmo de Fuerza Bruta posee un crecimiento exponencial, este solo fue ejecutado en instancias pequeñas. Por esta razón, además del gráfico global de tiempo, se incluye un gráfico complementario tipo zoom (Figura \ref{fig:tiempo_zoom_bruteforce}) que considera únicamente los valores de $n$ donde Fuerza Bruta pudo ejecutarse. Esto permite comparar con mayor claridad el comportamiento detallado de los cuatro algoritmos en el mismo rango de entrada y refuerza la validación experimental de que Fuerza Bruta y Programación Dinámica son comparados directamente en casos pequeños.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/tiempo_vs_n_zoom_bruteforce.png}
+    \caption{Zoom del tiempo de ejecución en instancias pequeñas donde Fuerza Bruta es ejecutable.}
+    \label{fig:tiempo_zoom_bruteforce}
+\end{figure}
+
+Se observa en la figura global que la Programación Dinámica crece de manera lineal respecto a $n$ cuando $M$, $E$ y la cantidad máxima de capítulos por anime ($q_{\max}$) se mantienen fijos. Es importante notar que su complejidad teórica es $\mathcal{O}(n \cdot M \cdot E \cdot q_{\max})$, por lo que el crecimiento no es estrictamente lineal en todos los parámetros de entrada. Como se mencionó, Fuerza Bruta no es viable para instancias medianas ni grandes y solo resulta útil como línea base de validación para instancias pequeñas. Las heurísticas Greedy son órdenes de magnitud más rápidas, manteniendo tiempos casi instantáneos incluso para $n=200$.
 
 \subsection{Uso de Memoria}
 La Figura \ref{fig:memoria} presenta el consumo de memoria máximo durante la ejecución.
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/memoria_vs_n.png}
+    \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/memoria_vs_n.png}
     \caption{Uso de memoria máximo por algoritmo.}
     \label{fig:memoria}
 \end{figure}
 
-El uso de memoria de DP se mantiene constante una vez que la matriz de $3000 \times 500$ es reservada. Las variaciones menores observadas en los gráficos corresponden a las estructuras de datos que almacenan la instancia del problema.
+La medición de memoria fue realizada mediante \texttt{ru\_maxrss}, por lo que representa el máximo uso de memoria alcanzado por el proceso durante la ejecución. Debido a esto, algunas curvas pueden superponerse o reflejar memoria reutilizada entre algoritmos, especialmente si estos son ejecutados dentro del mismo programa principal. Por lo tanto, el gráfico debe interpretarse como una aproximación del consumo máximo observado y no como una medición completamente aislada por algoritmo. Aun así, el consumo de memoria se encuentra fuertemente influenciado por la tabla utilizada en Programación Dinámica, cuyo tamaño depende de $M \cdot E$.
 
 \subsection{Calidad de la Solución}
-La calidad se define como el ratio entre la satisfacción de Greedy y la de DP (óptima).
+La calidad se define mediante el siguiente ratio:
+$$ \text{Calidad} = \frac{\text{Satisfacción Greedy}}{\text{Satisfacción DP}} $$
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/calidad_vs_n.png}
+    \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/calidad_vs_n.png}
     \caption{Ratio de calidad de las heurísticas Greedy.}
     \label{fig:calidad}
 \end{figure}
 
-Se observa que \textbf{Greedy 2} (Mejor Prefijo Global) tiende a ofrecer mejores resultados que \textbf{Greedy 1} (Siguiente Capítulo), ya que considera el beneficio de completar un anime (bono) de manera más integral al evaluar prefijos completos.
+En el gráfico, la línea horizontal en 1.0 representa la solución óptima de DP, y los valores más cercanos a 1.0 indican una mejor calidad de solución. Cabe destacar que el eje Y de este gráfico se mantiene en escala lineal desde 0 hasta 1.05 para facilitar la interpretación del ratio. Se observa que \textbf{Greedy 2} (Mejor Prefijo Global) tiende a ofrecer resultados más estables y superiores, ya que al evaluar prefijos completos logra capturar mejor el beneficio de completar un anime (bonos). Por su parte, \textbf{Greedy 1} (Siguiente Capítulo) toma decisiones más locales capítulo a capítulo, lo que lo lleva a fallar o entregar menor calidad en ciertos casos.

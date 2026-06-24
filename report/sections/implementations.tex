@@ -1,4 +1,3 @@
-\section{Implementaciones}
 
 En esta sección se describen los algoritmos implementados para resolver el problema de optimización de satisfacción en el visionado de animes bajo restricciones de tiempo y energía.
 
@@ -15,7 +14,7 @@ Se modeló el problema como una variante del \textbf{Problema de la Mochila Mult
 \begin{itemize}
     \item \textbf{Estado:} $DP[m][e]$ representa la máxima satisfacción obtenible con exactamente $m$ minutos y $e$ unidades de energía.
     \item \textbf{Transición:} Para cada anime, se actualiza el estado considerando cada prefijo posible de manera excluyente (solo se puede elegir un prefijo por anime). Para evitar usar el mismo anime varias veces en una misma iteración, se utiliza una copia temporal del estado previo.
-    \item \textbf{Complejidad Temporal:} $O(n \cdot M \cdot E \cdot \max(q_i))$. Con $n=200, M=3000, E=500, q_i=30$, el total de operaciones es manejable en tiempos modernos ($\approx 9 \times 10^9$ operaciones teóricas, pero mucho menos en la práctica por las restricciones de recursos).
+    \item \textbf{Complejidad Temporal:} $\mathcal{O}(n \cdot M \cdot E \cdot q_{\max})$. Con $n=200, M=3000, E=500, q_i=30$, el total de operaciones es manejable en tiempos modernos ($\approx 9 \times 10^9$ operaciones teóricas, pero mucho menos en la práctica por las restricciones de recursos).
     \item \textbf{Complejidad Espacial:} $O(M \cdot E)$ mediante la técnica de optimización de espacio.
 \end{itemize}
 

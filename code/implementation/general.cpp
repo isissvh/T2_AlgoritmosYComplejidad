@@ -1,3 +1,15 @@
+/**
+ * PROGRAMA PRINCIPAL: general.cpp
+ * 
+ * FUENTE: 
+ * Este archivo implementa el flujo principal de ejecución, lectura de datos y medición 
+ * de rendimiento (tiempo y memoria). La medición de memoria utiliza rusage (Linux).
+ * Referencias: Documentación de <chrono> (cppreference.com) y <sys/resource.h> (man pages).
+ * 
+ * DESCRIPCIÓN:
+ * Lee la entrada, ejecuta los 4 enfoques algorítmicos (Fuerza Bruta, DP, Greedy 1 y Greedy 2)
+ * e imprime y guarda los resultados junto a los tiempos de ejecución y uso de memoria.
+ */
 #include "common.h"
 #include <iostream>
 #include <fstream>
@@ -46,7 +58,7 @@ int main(int argc, char* argv[]) {
 
     auto run_and_measure = [&](const std::string& name, auto func) {
         // Solo correr Fuerza Bruta si n es pequeño
-        if (name == "BruteForce" && n > 15) {
+        if (name == "BruteForce" && n > 20) {
             std::cout << "Skipping BruteForce for " << base_name << " (n=" << n << ")" << std::endl;
             return;
         }
