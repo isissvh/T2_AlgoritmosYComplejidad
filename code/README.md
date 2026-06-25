@@ -2,15 +2,15 @@
 
 ## Estructura del Proyecto
 
-- `implementation/`: Contiene el código fuente en C++.
+- `implementation/`: Contiene el código fuente en C++, scripts y datos.
   - `algorithms/`: Implementación de los 4 enfoques (Brute Force, DP, Greedy 1, Greedy 2).
+  - `scripts/`: Scripts en Python.
+    - `testcases_generator.py`: Genera casos de prueba aleatorios.
+    - `plot_generator.py`: Genera gráficos a partir de las mediciones guardadas en CSV.
+  - `data/`: Almacenamiento de entradas, salidas, mediciones y gráficos.
   - `general.cpp`: Programa principal que coordina la lectura de datos y mediciones.
   - `common.h`: Estructuras de datos compartidas.
   - `makefile`: Archivo para compilar y ejecutar pruebas.
-- `scripts/`: Scripts en Python.
-  - `testcases_generator.py`: Genera casos de prueba aleatorios.
-  - `plot_generator.py`: Genera gráficos a partir de las mediciones guardadas en CSV.
-- `data/`: Almacenamiento de entradas, salidas, mediciones y gráficos.
 
 ## Instrucciones de Compilación y Ejecución
 

@@ -5,7 +5,7 @@ En esta sección se describen los algoritmos implementados para resolver el prob
 Se implementó una búsqueda exhaustiva mediante \textbf{Backtracking}. El algoritmo explora recursivamente todas las combinaciones posibles de prefijos para cada anime. 
 \begin{itemize}
     \item \textbf{Lógica:} Para cada anime $i$, se prueba con no ver ningún capítulo o ver un prefijo de longitud $k \in \{1, \dots, q_i\}$. Si los recursos (tiempo $M$ y energía $E$) no se agotan, se procede al siguiente anime.
-    \item \textbf{Complejidad Temporal:} $O(\prod_{i=1}^n (q_i + 1))$. Debido a su crecimiento exponencial, este algoritmo solo es viable para instancias muy pequeñas ($n < 15$).
+    \item \textbf{Complejidad Temporal:} $O(\prod_{i=1}^n (q_i + 1))$. Debido a su crecimiento exponencial, este algoritmo solo es viable para instancias pequeñas y medianas ($n \le 80$).
     \item \textbf{Complejidad Espacial:} $O(n)$, correspondiente a la profundidad máxima del árbol de recursión.
 \end{itemize}
 
@@ -22,7 +22,7 @@ Se modeló el problema como una variante del \textbf{Problema de la Mochila Mult
 Se implementaron dos enfoques voraces con criterios locales distintos:
 
 \subsubsection{Greedy 1: Siguiente Capítulo}
-Este algoritmo avanza "capítulo a capítulo". En cada paso, evalúa el siguiente capítulo disponible de todos los animes.
+Este algoritmo avanza 'capítulo a capítulo'. En cada paso, evalúa el siguiente capítulo disponible de todos los animes.
 \begin{itemize}
     \item \textbf{Criterio:} Maximizar el ratio $v_{i,j} / (t_{i,j} + c_{i,j})$. Si el capítulo completa el anime, se suma el bono $b_i$ a la satisfacción antes de calcular el ratio.
     \item \textbf{Complejidad:} $O(Q \cdot n)$, donde $Q$ es la cantidad total de capítulos.

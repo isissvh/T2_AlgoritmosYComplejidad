@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
 
     auto run_and_measure = [&](const std::string& name, auto func) {
         // Solo correr Fuerza Bruta si n es pequeño
-        if (name == "BruteForce" && n > 20) {
+        if (name == "BruteForce" && n > 40) {
             std::cout << "Skipping BruteForce for " << base_name << " (n=" << n << ")" << std::endl;
             return;
         }

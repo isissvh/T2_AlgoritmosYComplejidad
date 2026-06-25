@@ -1,5 +1,5 @@
 algoritmo,n,M,E,satisfaccion,tiempo_ms,memoria_kb
-BruteForce,5,100,50,93615,0.00077,2096
-DynamicProgramming,5,100,50,93615,0.069151,3928
-Greedy1,5,100,50,87779,0.000998,3928
-Greedy2,5,100,50,87779,0.000935,3928
+BruteForce,5,100,50,97420,0.0005,3328
+DynamicProgramming,5,100,50,97420,0.043,3712
+Greedy1,5,100,50,97420,0.0006,3712
+Greedy2,5,100,50,97420,0.0005,3712

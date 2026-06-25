@@ -10,17 +10,17 @@ La Figura \ref{fig:tiempo} muestra el tiempo de ejecución en escala logarítmic
     \label{fig:tiempo}
 \end{figure}
 
-Dado que el algoritmo de Fuerza Bruta posee un crecimiento exponencial, este solo fue ejecutado en instancias pequeñas. Por esta razón, además del gráfico global de tiempo, se incluye un gráfico complementario tipo zoom (Figura \ref{fig:tiempo_zoom_bruteforce}) que considera únicamente los valores de $n$ donde Fuerza Bruta pudo ejecutarse. Esto permite comparar con mayor claridad el comportamiento detallado de los cuatro algoritmos en el mismo rango de entrada y refuerza la validación experimental de que Fuerza Bruta y Programación Dinámica son comparados directamente en casos pequeños.
+Dado que el algoritmo de Fuerza Bruta posee un crecimiento exponencial, este fue ejecutado en instancias de hasta $n=40$. Por esta razón, además del gráfico global de tiempo, se incluye un gráfico complementario tipo zoom (Figura \ref{fig:tiempo_zoom_bruteforce}) que considera únicamente los valores de $n \le 40$ donde Fuerza Bruta pudo ejecutarse. Esto permite comparar con mayor claridad el comportamiento detallado de los cuatro algoritmos en el mismo rango de entrada y refuerza la validación experimental al comparar directamente Fuerza Bruta y Programación Dinámica.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../code/implementation/data/plots/tiempo_vs_n_zoom_bruteforce.png}
-    \caption{Zoom del tiempo de ejecución en instancias pequeñas donde Fuerza Bruta es ejecutable.}
+    \caption{Zoom del tiempo de ejecución en instancias de hasta $n=40$ donde Fuerza Bruta es ejecutable.}
     \label{fig:tiempo_zoom_bruteforce}
 \end{figure}
 
-Se observa en la figura global que la Programación Dinámica crece de manera lineal respecto a $n$ cuando $M$, $E$ y la cantidad máxima de capítulos por anime ($q_{\max}$) se mantienen fijos. Es importante notar que su complejidad teórica es $\mathcal{O}(n \cdot M \cdot E \cdot q_{\max})$, por lo que el crecimiento no es estrictamente lineal en todos los parámetros de entrada. Como se mencionó, Fuerza Bruta no es viable para instancias medianas ni grandes y solo resulta útil como línea base de validación para instancias pequeñas. Las heurísticas Greedy son órdenes de magnitud más rápidas, manteniendo tiempos casi instantáneos incluso para $n=200$.
-
+Se observa en la figura global que la Programación Dinámica crece de manera lineal respecto a $n$ cuando $M$, $E$ y la cantidad máxima de capítulos por anime ($q_{\max}$) se mantienen fijos. Es importante notar que su complejidad teórica es $\mathcal{O}(n \cdot M \cdot E \cdot q_{\max})$, por lo que el crecimiento no es estrictamente lineal en todos los parámetros de entrada. Como se mencionó, Fuerza Bruta no es viable para instancias más grandes ($n > 40$) y resulta útil principalmente como línea base de validación. Las heurísticas Greedy son órdenes de magnitud más rápidas, manteniendo tiempos casi instantáneos incluso para $n=200$.
+\newpage
 \subsection{Uso de Memoria}
 La Figura \ref{fig:memoria} presenta el consumo de memoria máximo durante la ejecución.
 
