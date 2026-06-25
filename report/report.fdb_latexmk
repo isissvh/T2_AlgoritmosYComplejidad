@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber report"] 1782182437.47671 "report.bcf" "report.bbl" "report" 1782345599.3742 0
-  "report.bcf" 1782345599.10622 107701 8e11a3564a9755c862f81f9053911864 "pdflatex"
+["biber report"] 1782182437.47671 "report.bcf" "report.bbl" "report" 1782347088.65825 0
+  "report.bcf" 1782347088.3883 107701 8e11a3564a9755c862f81f9053911864 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1782345594.3823 "/mnt/c/Users/isido/Desktop/GITHUB/T2_AlgoritmosYComplejidad/report/report.tex" "report.pdf" "report" 1782345599.38039 0
+["pdflatex"] 1782347083.62962 "/mnt/c/Users/isido/Desktop/GITHUB/T2_AlgoritmosYComplejidad/report/report.tex" "report.pdf" "report" 1782347088.66345 0
   "../code/implementation/data/plots/calidad_vs_n.png" 1782344950.39064 241286 0a493da0a4a07a9dae1d603d973f63a7 ""
   "../code/implementation/data/plots/memoria_vs_n.png" 1782344949.98738 192006 88f2a72117b4e321d7ed9d7ceba7fcfb ""
   "../code/implementation/data/plots/tiempo_vs_n.png" 1782344949.13095 245635 3a4a29b83e0cdfa8b6b0d6c81fc94c01 ""
@@ -314,15 +314,15 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774568569 8215581 cad7185e01300bee2fd84ff85191f1b2 ""
   "author.tex" 1782182388.81273 517 ce32d83935598011e2727a81fa78e8cb ""
   "preamble.tex" 1782341235.74231 2272 edeb751806d30b114df0792abef0eb7c ""
-  "report.aux" 1782345599.07552 3462 7c94d01d584c90a70960a5880c8bd0b2 "pdflatex"
+  "report.aux" 1782347088.36047 3462 7c94d01d584c90a70960a5880c8bd0b2 "pdflatex"
   "report.bbl" 1782182438.40082 466 ee04f40f768daeed26442158e95aba61 "biber report"
-  "report.out" 1782345599.09632 1968 746cff98cf53535204d68a4de2959a2e "pdflatex"
-  "report.run.xml" 1782345599.10999 2319 85416a11bf768be6a1e5b1dccfd5e02c "pdflatex"
+  "report.out" 1782347088.37714 1968 746cff98cf53535204d68a4de2959a2e "pdflatex"
+  "report.run.xml" 1782347088.39329 2319 85416a11bf768be6a1e5b1dccfd5e02c "pdflatex"
   "report.tex" 1782345468.40594 1108 0c1cb3d8cd816226dd678eb356cd0af7 ""
   "sections/conclusions.tex" 1782345592.5254 1930 4d2a3bf72b496826c8ce1f10543ec2eb ""
   "sections/experiment_intro.tex" 1782345466.86634 1064 5e411c263212a78babda08bf9d6d782e ""
-  "sections/experiment_results.tex" 1782345219.74589 4242 31a239b328e76d5083c877c8a7615f74 ""
-  "sections/implementations.tex" 1782345326.7157 3056 56ac57359caa9a0f11bc3e88140e8ceb ""
+  "sections/experiment_results.tex" 1782347077.37736 4238 6885894c5a2d30855fffaceb9e7ef133 ""
+  "sections/implementations.tex" 1782346845.40558 3048 1925dc519584e3bf378a8be90b8ebee1 ""
   (generated)
   "report.aux"
   "report.bcf"

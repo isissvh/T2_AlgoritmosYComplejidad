@@ -1,4 +1,4 @@
-A continuación se presentan los resultados obtenidos tras ejecutar la suite de pruebas.
+A continuación se presentan los resultados obtenidos tras ejecutar las pruebas.
 
 \subsection{Tiempo de Ejecución}
 La Figura \ref{fig:tiempo} muestra el tiempo de ejecución en escala logarítmica respecto al número de animes $n$. Este gráfico global muestra la escalabilidad de los algoritmos en una amplia gama de tamaños de entrada.
@@ -44,4 +44,6 @@ $$ \text{Calidad} = \frac{\text{Satisfacción Greedy}}{\text{Satisfacción DP}} 
     \label{fig:calidad}
 \end{figure}
 
-En el gráfico, la línea horizontal en 1.0 representa la solución óptima de DP, y los valores más cercanos a 1.0 indican una mejor calidad de solución. Cabe destacar que el eje Y de este gráfico se mantiene en escala lineal desde 0 hasta 1.05 para facilitar la interpretación del ratio. Se observa que \textbf{Greedy 2} (Mejor Prefijo Global) tiende a ofrecer resultados más estables y superiores, ya que al evaluar prefijos completos logra capturar mejor el beneficio de completar un anime (bonos). Por su parte, \textbf{Greedy 1} (Siguiente Capítulo) toma decisiones más locales capítulo a capítulo, lo que lo lleva a fallar o entregar menor calidad en ciertos casos.
+En el gráfico, la línea horizontal en 1.0 representa la solución óptima de DP, y los valores más cercanos a 1.0 indican una mejor calidad de solución. 
+Cabe destacar que el eje Y de este gráfico se mantiene en escala lineal desde 0 hasta 1.05 para facilitar la interpretación del ratio. 
+Se observa que \textbf{Greedy 2} (Mejor Prefijo Global) tiende a mostrar resultados más estables y superiores, ya que al evaluar prefijos completos logra capturar mejor el beneficio de completar un anime (bonos). Por su parte, \textbf{Greedy 1} (Siguiente Capítulo) toma decisiones más locales capítulo a capítulo, lo que lo lleva a fallar o entregar menor calidad en ciertos casos.
